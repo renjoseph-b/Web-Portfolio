@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renan's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Theme Toggle -->
+    <button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <!--<span class="brand-initial">R</span>-->
+                <span class="brand-name">Renan</span>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="greeting">Hello, I'm</div>
+                    <h1 class="hero-name">Renan</h1>
+                    <div class="role-container">
+                        <span class="role-prefix">I'm a</span>
+                        <span class="typing-text" id="typingRole"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                    <p class="hero-description">Crafting exceptional digital experiences through innovative solutions and clean, efficient code. 
+                        Specializing in full-stack development with a passion for creating user-centric applications.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <!--<a href="#" aria-label="GitHub" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>-->
+                        <a href="www.linkedin.com/in/renan-joseph-billion-0496b6286" aria-label="LinkedIn" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.facebook.com/rjjaaayyy/" aria-label="Facebook" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/renrenjoseph/" aria-label="Instagram" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="hero-portrait.png" alt="Renan - Software Engineer">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down">
+            <a href="#about" aria-label="Scroll to About section">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+            </div>
+
+        </div>     
+    </section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">Get To Know More</span>
+      <h2 class="section-title">About Me</h2>
+    </header>
+
+    <div class="about-content">
+      <!-- Image -->
+      <div class="about-image">
+        <img src="profile.jpg" alt="Renan Joseph profile photo">
+      </div>
+
+      <!-- Text -->
+      <div class="about-text">
+        <p class="lead">
+          I'm a Web Developer and Software Engineer with hands-on experience in Shopify development, WordPress and Joomla backend systems, and API integrations.
+            <br><br>
+          Skilled in building secure, scalable, and performance-optimized web applications using PHP, JavaScript, MySQL, and CMS platforms.
+          Proven ability to collaborate with cross-functional teams, solve complex backend issues, and deliver user-focused solutions.
+          Actively seeking opportunities in Web Development, Software Engineering, or Backend Development roles.
+        </p>
+
+        <div class="about-cta">
+          <a href="Billion_RenanJoseph-Resume.pdf"
+             class="btn btn-primary"
+             download="RenanJoseph_Resume.pdf">
+            <i class="fas fa-download"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    
+    
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+    <div class="container">
+        <div class="section-header">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">Technologies & Tools</h2>
+        </div>
+
+        <div class="skills-grid">
+
+        <!-- Development Card -->
+        <div class="skill-card">
+            <h3>Development</h3>
+            <ul class="skill-list">
+            <li><i class="fab fa-html5"></i> HTML</li>
+            <li><i class="fab fa-css3-alt"></i> CSS</li>
+            <li><i class="fab fa-js-square"></i> JavaScript</li>
+            <li><i class="fab fa-php"></i> PHP</li>
+            <li><i class="fab fa-java"></i> Java</li>
+            <li><i class="fab fa-python"></i> Python</li>
+            <li><i class="fas fa-fire"></i> Firebase</li>
+            <li><i class="fa-solid fa-database"></i> MySQL</li>
+            </ul>
+        </div>
+
+        <!-- Communication Card -->
+        <div class="skill-card">
+            <h3>Communication</h3>
+            <ul class="skill-list">
+            <li><i class="fab fa-slack"></i> Slack</li>
+            <li><i class="fas fa-comment"></i> Lark</li>
+            <li><i class="fas fa-envelope"></i> Gmail</li>
+            <li><i class="fas fa-video"></i> Zoom</li>
+            <li><i class="fab fa-google"></i> Google Meet</li>
+            </ul>
+        </div>
+
+        <!-- Productivity Card -->
+        <div class="skill-card">
+            <h3>Productivity</h3>
+            <ul class="skill-list">
+            <li><i class="fab fa-google"></i> GSuite</li>
+            <li><i class="far fa-file-word"></i> MS Word</li>
+            <li><i class="far fa-file-excel"></i> MS Excel</li>
+            <li><i class="far fa-calendar-alt"></i> Calendar</li>
+            <li><i class="fas fa-robot"></i> Gemini</li>
+            <li><i class="fa-solid fa-brain"></i> ChatGPT</li>
+            <li><i class="fas fa-search"></i> Perplexity</li>
+            </ul>
+        </div>
+
+                <!-- Platforms Card -->
+        <div class="skill-card">
+            <h3>Platforms</h3>
+            <ul class="skill-list">
+            <li><i class="fab fa-shopify"></i> Shopify</li>
+            <li><i class="fa-brands fa-wordpress"></i> WordPress</li>
+            <li><i class="fa-brands fa-joomla"></i> Joomla</li>
+            <li><i class="fa-brands fa-github"></i> GitHub</li>
+            </ul><br>
+            <h3>Design</h3>
+            <ul class="skill-list">
+            <li><i class="fab fa-figma"></i> Figma</li>
+            <li><i class="fas fa-pencil-alt"></i> Canva</li>
+            </ul>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Projects Section --> 
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                <button class="filter-btn" data-filter="shopify">Shopify</button>
+                <button class="filter-btn" data-filter="joomla">Joomla</button>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Sphere CRE -->
+                <div class="project-card" data-category="joomla">
+                    <div class="project-image">
+                        <img src="sphere.jpg" alt="Sphere CRE project preview" loading="lazy" >
+                        <div class="project-overlay">
+                            <a href="https://www.spherecre.org/" target="_blank" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Sphere CRE</h3>
+                            <span class="platform-badge joomla">Joomla</span>
+                        </div>
+                        <p>SPHERE Centre of Research Excellence website highlighting multidisciplinary sexual
+                            and reproductive health research and resources to improve health care access for women.</p>
+                    </div>
+                </div>
+
+                <!-- Future Skills Organisation -->
+                <div class="project-card" data-category="wordpress">
+                    <div class="project-image">
+                        <img src="fso.png" alt="Future Skills Organisation project preview" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://www.futureskillsorganisation.com.au/#" target="_blank" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Future Skills Organisation</h3>
+                            <span class="platform-badge wordpress">WordPress</span>
+                        </div>
+                        <p>Future Skills Organisation’s platform for a government‑funded Jobs & Skills Council
+                           that develops and promotes workforce training in finance, technology and business sectors.</p>
+                    </div>
+                </div>
+
+                <!-- MCRI -->
+                <div class="project-card" data-category="joomla">
+                    <div class="project-image">
+                        <img src="mcri.png" alt="MCRI project preview" loading="lazy">
+                        
+                        <div class="project-overlay">
+                            <a href="https://www.mcri.edu.au/" target="_blank" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>MCRI</h3>
+                            <span class="platform-badge joomla">Joomla</span>
+                        </div>
+                        <p>Murdoch Children’s Research Institute’s site showcasing Australia’s 
+                        largest child health research centre focused on improving health outcomes for children.</p>
+                    </div>
+                </div>
+
+                <!-- TCV -->
+                <div class="project-card" data-category="joomla">
+                    <div class="project-image">
+                        <img
+                            src="tcv.jpg" alt="TCV project preview" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://www.tcv.vic.gov.au/" target="_blank" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>TCV</h3>
+                            <span class="platform-badge joomla">Joomla</span>
+                        </div>
+                        <p>The official site of the Treasury Corporation of Victoria, providing information about state financing,
+                            tailored loans, and investment services for Victoria, Australia.</p>
+                    </div>
+                </div>
+
+                <!-- NAAFLS -->
+                <div class="project-card" data-category="wordpress">
+                    <div class="project-image">
+                        <img
+                            src="naafls.png"
+                            alt="NAAFLS project preview"
+                            loading="lazy"
+                        >
+                        <div class="project-overlay">
+                            <a href="https://naafls.com.au/" target="_blank" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>NAAFLS</h3>
+                            <span class="platform-badge wordpress">WordPress</span>
+                        </div>
+                        <p>The North Australian Aboriginal Family Legal Service website offering legal
+                        and non‑legal support services to Aboriginal families in northern Australia.</p>
+                    </div>
+                </div>
+
+                <!-- Love Pumpums -->
+                <div class="project-card" data-category="shopify">
+                    <div class="project-image">
+                        <img
+                            src="pumpums.png"
+                            alt="Love Pumpums project preview"
+                            loading="lazy"
+                        >
+                        <div class="project-overlay">
+                            <a href="https://lovepumpums.com/" target="_blank" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Love Pumpums</h3>
+                            <span class="platform-badge shopify">Shopify</span>
+                        </div>
+                        <p>An online shop selling PumPums menstrual relief
+                            gummies and period care products promoting natural comfort during the menstrual cycle.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Let's Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Let's Work Together</h3>
+                        <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>renanjoseph.billionn@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Location</h4>
+                                    <p>General Maraino Alvarez, Cavite, PH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your Name Here..." required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="How can I help you?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Your message here..." rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+                <div class="footer-bottom">
+                    <p>&copy; <span id="currentYear"></span> by Renan | All rights reserved.</p>
+                </div>
+            
+        </footer>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
