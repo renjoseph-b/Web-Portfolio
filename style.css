@@ -518,7 +518,7 @@ section {
 /* Download CV Button */
 .about-cta {
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .about-cta .btn {
