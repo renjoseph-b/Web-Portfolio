@@ -161,137 +161,51 @@ filterButtons.forEach(button => {
     });
 });
 
-// Contact Form Submission
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// Contact Form Submission (Web3Forms)
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    
-    // Add loading state to button
-    const submitBtn = this.querySelector('.btn-submit');
+
+    const form = this;
+    const submitBtn = form.querySelector('.btn-submit');
     const originalContent = submitBtn.innerHTML;
+
+    // Loading state
     submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
     submitBtn.style.pointerEvents = 'none';
-    
-    // Simulate sending delay
-    setTimeout(() => {
-        // Create 503 error page
-        document.body.innerHTML = `
-            <style>
-                body {
-                    margin: 0;
-                    padding: 0;
-                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-                }
-                .error-page {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    min-height: 100vh;
-                    background: linear-gradient(135deg, #e0fbfc 0%, #ffffff 50%, #98c1d9 100%);
-                    text-align: center;
-                    padding: 40px 20px;
-                    position: relative;
-                    overflow: hidden;
-                }
-                .error-page::before {
-                    content: '';
-                    position: absolute;
-                    top: -50%;
-                    left: -20%;
-                    width: 600px;
-                    height: 600px;
-                    background: radial-gradient(circle, rgba(238, 108, 77, 0.1) 0%, transparent 70%);
-                    border-radius: 50%;
-                }
-                .error-container {
-                    position: relative;
-                    z-index: 1;
-                    max-width: 600px;
-                }
-                .error-code {
-                    font-size: 8rem;
-                    font-weight: 800;
-                    background: linear-gradient(135deg, #ee6c4d, #3d5a80);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip: text;
-                    margin-bottom: 16px;
-                    line-height: 1;
-                    letter-spacing: -0.03em;
-                }
-                .error-title {
-                    font-size: 2rem;
-                    color: #293241;
-                    margin-bottom: 16px;
-                    font-weight: 700;
-                }
-                .error-message {
-                    font-size: 1.1rem;
-                    color: #5a6c7d;
-                    margin-bottom: 40px;
-                    line-height: 1.8;
-                }
-                .error-icon {
-                    width: 80px;
-                    height: 80px;
-                    background: linear-gradient(135deg, #ee6c4d, #3d5a80);
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin: 0 auto 32px;
-                    animation: pulse 2s infinite;
-                }
-                .error-icon i {
-                    font-size: 2.5rem;
-                    color: white;
-                }
-                @keyframes pulse {
-                    0%, 100% { transform: scale(1); }
-                    50% { transform: scale(1.05); }
-                }
-                .btn-home {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 12px;
-                    padding: 16px 36px;
-                    background-color: #ee6c4d;
-                    color: white;
-                    text-decoration: none;
-                    border-radius: 8px;
-                    font-weight: 600;
-                    font-size: 1rem;
-                    transition: all 0.3s ease;
-                    box-shadow: 0 4px 12px rgba(238, 108, 77, 0.3);
-                }
-                .btn-home:hover {
-                    background-color: #d45a3a;
-                    transform: translateY(-2px);
-                    box-shadow: 0 6px 20px rgba(238, 108, 77, 0.4);
-                }
-                @media (max-width: 768px) {
-                    .error-code { font-size: 6rem; }
-                    .error-title { font-size: 1.5rem; }
-                    .error-message { font-size: 1rem; }
-                }
-            </style>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-            <div class="error-page">
-                <div class="error-container">
-                    <div class="error-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="error-code">503</div>
-                    <h1 class="error-title">Service Temporarily Unavailable</h1>
-                    <p class="error-message">We're sorry, but the service is temporarily unavailable. Our team is working hard to restore it. Please try again later.</p>
-                    <a href="/" class="btn-home">
-                        <i class="fas fa-home"></i>
-                        <span>Return to Homepage</span>
-                    </a>
-                </div>
-            </div>
-        `;
-    }, 1500);
+
+    const formData = new FormData(form); // access_key comes from the hidden input in the HTML
+
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+        });
+        const data = await response.json();
+
+        if (response.ok) {
+            submitBtn.innerHTML = '<span>Message Sent!</span><i class="fas fa-check"></i>';
+            form.reset();
+            setTimeout(() => {
+                submitBtn.innerHTML = originalContent;
+                submitBtn.style.pointerEvents = 'auto';
+            }, 3000);
+        } else {
+            submitBtn.innerHTML = '<span>Something went wrong</span><i class="fas fa-triangle-exclamation"></i>';
+            console.error('Web3Forms error:', data.message);
+            setTimeout(() => {
+                submitBtn.innerHTML = originalContent;
+                submitBtn.style.pointerEvents = 'auto';
+            }, 3000);
+        }
+    } catch (error) {
+        submitBtn.innerHTML = '<span>Network error</span><i class="fas fa-triangle-exclamation"></i>';
+        console.error('Contact form fetch failed:', error);
+        setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.style.pointerEvents = 'auto';
+        }, 3000);
+    }
 });
 
 // Active Navigation Link on Scroll

@@ -181,6 +181,18 @@ body {
   border-radius: 2px;
 }
 
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -455,25 +467,27 @@ section {
   max-width: 1400px;
 }
 
-/* Layout */
+/* Layout: image left, text right on desktop */
 .about-content {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr; /* Image | Text */
-  gap: 40px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 40px;
 }
 
 /* =========================
    Image
    ========================= */
 .about-image {
+  order: 1;
   display: flex;
   justify-content: flex-start;
+  flex: 0 0 auto;
 }
 
 .about-image img {
   width: 100%;
-  max-width: 460px;
+  max-width: 380px;
   border-radius: 16px;
   object-fit: cover;
   display: block;
@@ -481,7 +495,8 @@ section {
 
 /*Text*/
 .about-text {
-  max-width: auto;
+  order: 2;
+  flex: 1 1 auto;
   text-align: justify;
 }
 
@@ -501,6 +516,11 @@ section {
 }
 
 /* Download CV Button */
+.about-cta {
+  display: flex;
+  justify-content: center;
+}
+
 .about-cta .btn {
   background-color: var(--accent-color);
   color: #ffffff;
@@ -532,13 +552,8 @@ section {
 
 /* Responsive*/
 @media (max-width: 1024px) {
-  .about-content {
-    grid-template-columns: 1fr 1.4fr;
-    gap: 32px;
-  }
-
   .about-image img {
-    max-width: 400px;
+    max-width: 340px;
   }
 }
 
@@ -548,28 +563,25 @@ section {
   }
 
   .about-content {
-    grid-template-columns: 1fr;
-    gap: 100px;
-  }
-
-  /* Text first on mobile */
-  .about-text {
-    order: 1;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
   .about-image {
-    order: 2;
+    order: 1;
     justify-content: center;
+    width: 100%;
+  }
+
+  .about-text {
+    order: 2;
+    width: 100%;
+    text-align: center;
   }
 
   .about-image img {
-    max-width: 320px;
-  }
-
-  .about-cta {
-    display: flex;
-    justify-content: center;
+    max-width: 300px;
   }
 }
 
@@ -583,7 +595,7 @@ section {
   }
 
   .about-image img {
-    max-width: 260px;
+    max-width: 240px;
   }
 }
 
@@ -996,7 +1008,6 @@ section {
 /* Tablets (768px - 992px) */
 @media (max-width: 992px) {
   .hero-content,
-  .about-content,
   .contact-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1163,16 +1174,6 @@ section {
 
   .section-header {
     margin-bottom: 32px;
-  }
-
-  /* About Section */
-  .about {
-    padding: 60px 0;
-  }
-
-  .about-text .lead {
-    font-size: 1.1rem;
-    text-align: left;
   }
 
   /* Skills */
